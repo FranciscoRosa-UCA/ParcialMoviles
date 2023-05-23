@@ -1,6 +1,6 @@
 package com.example.parcialmovilestorresrosa.data.model
 
-class InstrumentModel (
+data class InstrumentModel (
     val name: String,
     val category: String,
 )
