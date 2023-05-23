@@ -54,9 +54,9 @@ class InstrumentViewModel(private val repository: InstrumentRepository) : ViewMo
         status.value = INACTIVE
     }
 
-    fun setSelectedInstrument(movie: InstrumentModel) {
-        name.value = movie.name
-        category.value = movie.category
+    fun setSelectedInstrument(instrument: InstrumentModel) {
+        name.value = instrument.name
+        category.value = instrument.category
 
     }
 
