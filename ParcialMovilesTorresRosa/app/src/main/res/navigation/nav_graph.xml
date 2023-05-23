@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/billboardFragment">
+
+    <fragment
+        android:id="@+id/billboardFragment"
+        android:name="com.example.parcialmovilestorresrosa.BillboardFragment"
+        android:label="fragment_billboard"
+        tools:layout="@layout/fragment_billboard" >
+        <action
+            android:id="@+id/action_billboardFragment_to_newInstrumentFragment"
+            app:destination="@id/newInstrumentFragment" />
+        <action
+            android:id="@+id/action_billboardFragment_to_instrumentFragment"
+            app:destination="@id/instrumentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/instrumentFragment"
+        android:name="com.example.parcialmovilestorresrosa.InstrumentFragment"
+        android:label="fragment_instrument"
+        tools:layout="@layout/fragment_instrument" />
+    <fragment
+        android:id="@+id/newInstrumentFragment"
+        android:name="com.example.parcialmovilestorresrosa.NewInstrumentFragment"
+        android:label="fragment_new_instrument"
+        tools:layout="@layout/fragment_new_instrument" />
+</navigation>
