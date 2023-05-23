@@ -6,15 +6,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.parcialmovilestorresrosa.R
+import com.example.parcialmovilestorresrosa.databinding.FragmentInstrumentBinding
 
 
 class InstrumentFragment : Fragment() {
 
+    private lateinit var binding: FragmentInstrumentBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_instrument, container, false)
+        binding = FragmentInstrumentBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
 }

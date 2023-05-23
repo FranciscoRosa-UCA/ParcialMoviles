@@ -12,6 +12,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.parcialmovilestorresrosa.R
 import com.example.parcialmovilestorresrosa.data.model.InstrumentModel
+import com.example.parcialmovilestorresrosa.databinding.FragmentNewInstrumentBinding
 
 
 class NewInstrumentFragment : Fragment() {
@@ -20,46 +21,46 @@ class NewInstrumentFragment : Fragment() {
         InstrumentViewModel.Factory
     }
 
-    private lateinit var nameEditText: EditText
-    private lateinit var categoryEditText: EditText
-    private lateinit var submitButton: Button
-
+    private lateinit var binding: FragmentNewInstrumentBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_new_instrument, container, false)
+    ): View {
+        binding = FragmentNewInstrumentBinding.inflate(inflater, container, false)
+        return binding.root
     }
-
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        bind()
-        submitButton.setOnClickListener {
-            addInstrument()
+        setViewModel()
+        observeStatus()
+    }
+
+    private fun setViewModel() {
+        binding.viewmodel = instrumentViewModel
+    }
+
+    private fun observeStatus() {
+        instrumentViewModel.status.observe(viewLifecycleOwner) { status ->
+            when {
+                status.equals(InstrumentViewModel.WRONG_INFORMATION) -> {
+                    Log.d(APP_TAG, status)
+                    instrumentViewModel.clearStatus()
+                }
+                status.equals(InstrumentViewModel.INSTRUMENT_CREATED) -> {
+                    Log.d(APP_TAG, status)
+                    Log.d(APP_TAG, instrumentViewModel.getInstruments().toString())
+
+                    instrumentViewModel.clearStatus()
+                    findNavController().popBackStack()
+                }
+            }
         }
     }
 
-    private fun bind() {
-        nameEditText = view?.findViewById(R.id.name_edit_text) !!
-        categoryEditText = view?.findViewById(R.id.category_edit_text) !!
-        submitButton = view?.findViewById(R.id.submit_button) !!
+    companion object {
+        const val APP_TAG = "APP TAG"
     }
-
-    private fun addInstrument() {
-
-        val name = nameEditText.text.toString()
-        val category = categoryEditText.text.toString()
-
-        val instrument = InstrumentModel(name, category)
-
-        instrumentViewModel.addInstruments(instrument)
-
-        Log.d("NewInstrumentFragment", instrumentViewModel.getInstruments().toString())
-
-        findNavController().popBackStack()
-    }
-
 }

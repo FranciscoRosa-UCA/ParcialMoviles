@@ -8,10 +8,13 @@ import android.view.ViewGroup
 import androidx.cardview.widget.CardView
 import androidx.navigation.findNavController
 import com.example.parcialmovilestorresrosa.R
+import com.example.parcialmovilestorresrosa.databinding.FragmentBillboardBinding
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 
 class BillboardFragment : Fragment() {
+
+    private lateinit var binding: FragmentBillboardBinding
 
     private lateinit var btnCreateNewInstrument: FloatingActionButton
     private lateinit var primerCV: CardView
@@ -21,8 +24,8 @@ class BillboardFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_billboard, container, false)
+        binding = FragmentBillboardBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

@@ -1,9 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.example.parcialmovilestorresrosa.ui.instrument.InstrumentViewModel" />
+    </data>
+
+<FrameLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.instrument.NewInstrumentFragment"
     android:background="@color/backgroundLayout">
 
@@ -42,6 +51,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/name_edit_text"
+                android:text="@={viewmodel.name}"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/cardLayout"/>
@@ -63,6 +73,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/category_edit_text"
+                android:text="@={viewmodel.category}"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/cardLayout" />
@@ -72,6 +83,7 @@
 
         <Button
             android:id="@+id/submit_button"
+            android:onClick="@{() -> viewmodel.createInstrument()}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/mediumGap"
@@ -84,3 +96,5 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
+
+</layout>
