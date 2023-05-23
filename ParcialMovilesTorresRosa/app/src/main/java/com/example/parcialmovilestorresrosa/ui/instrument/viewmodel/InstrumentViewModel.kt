@@ -1,4 +1,4 @@
-package com.example.parcialmovilestorresrosa.ui.instrument
+package com.example.parcialmovilestorresrosa.ui.instrument.viewmodel
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -44,7 +44,7 @@ class InstrumentViewModel(private val repository: InstrumentRepository) : ViewMo
         return true
     }
 
-    private fun clearData() {
+    fun clearData() {
         name.value = ""
         category.value = ""
 
@@ -52,6 +52,12 @@ class InstrumentViewModel(private val repository: InstrumentRepository) : ViewMo
 
     fun clearStatus() {
         status.value = INACTIVE
+    }
+
+    fun setSelectedInstrument(movie: InstrumentModel) {
+        name.value = movie.name
+        category.value = movie.category
+
     }
 
     companion object {

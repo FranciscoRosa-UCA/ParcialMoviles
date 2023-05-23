@@ -1,4 +1,4 @@
-package com.example.parcialmovilestorresrosa.ui.instrument
+package com.example.parcialmovilestorresrosa.ui.instrument.newinstrument
 
 import android.os.Bundle
 import android.util.Log
@@ -6,13 +6,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.EditText
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
-import com.example.parcialmovilestorresrosa.R
-import com.example.parcialmovilestorresrosa.data.model.InstrumentModel
 import com.example.parcialmovilestorresrosa.databinding.FragmentNewInstrumentBinding
+import com.example.parcialmovilestorresrosa.ui.instrument.viewmodel.InstrumentViewModel
 
 
 class NewInstrumentFragment : Fragment() {

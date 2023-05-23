@@ -7,7 +7,7 @@
     <data>
         <variable
             name="viewmodel"
-            type="com.example.parcialmovilestorresrosa.ui.instrument.InstrumentViewModel" />
+            type="com.example.parcialmovilestorresrosa.ui.instrument.viewmodel.InstrumentViewModel" />
     </data>
 
 
@@ -38,7 +38,7 @@
             android:layout_marginStart="@dimen/smallGap"
             android:layout_marginTop="@dimen/smallGap"
             android:fontFamily="sans-serif-condensed-medium"
-            android:text="Piano"
+            android:text="@{viewmodel.name}"
             android:textColor="@color/white"
             android:textSize="@dimen/mediumTextGap"
             android:textStyle="bold"
@@ -51,7 +51,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/largeTextGap"
-            android:text="Categoria"
+            android:text="@{viewmodel.category}"
             android:textColor="@color/categoria"
             android:textSize="@dimen/largeTextGap"
             app:layout_constraintEnd_toEndOf="parent"

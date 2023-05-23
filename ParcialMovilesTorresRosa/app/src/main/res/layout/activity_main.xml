@@ -7,7 +7,7 @@
     <data>
         <variable
             name="viewmodel"
-            type="com.example.parcialmovilestorresrosa.ui.instrument.InstrumentViewModel" />
+            type="com.example.parcialmovilestorresrosa.ui.instrument.viewmodel.InstrumentViewModel" />
     </data>
 
 <androidx.constraintlayout.widget.ConstraintLayout

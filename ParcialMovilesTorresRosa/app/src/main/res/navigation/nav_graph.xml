@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/billboardFragment"
-        android:name="com.example.parcialmovilestorresrosa.ui.instrument.BillboardFragment"
+        android:name="com.example.parcialmovilestorresrosa.ui.instrument.billboard.BillboardFragment"
         android:label="fragment_billboard"
         tools:layout="@layout/fragment_billboard" >
         <action
@@ -24,7 +24,7 @@
         tools:layout="@layout/fragment_instrument" />
     <fragment
         android:id="@+id/newInstrumentFragment"
-        android:name="com.example.parcialmovilestorresrosa.ui.instrument.NewInstrumentFragment"
+        android:name="com.example.parcialmovilestorresrosa.ui.instrument.newinstrument.NewInstrumentFragment"
         android:label="fragment_new_instrument"
         tools:layout="@layout/fragment_new_instrument" />
 </navigation>

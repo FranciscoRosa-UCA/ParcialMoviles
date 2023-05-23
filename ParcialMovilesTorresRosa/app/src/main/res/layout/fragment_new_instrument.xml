@@ -7,13 +7,13 @@
     <data>
         <variable
             name="viewmodel"
-            type="com.example.parcialmovilestorresrosa.ui.instrument.InstrumentViewModel" />
+            type="com.example.parcialmovilestorresrosa.ui.instrument.viewmodel.InstrumentViewModel" />
     </data>
 
 <FrameLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.instrument.NewInstrumentFragment"
+    tools:context=".ui.instrument.newinstrument.NewInstrumentFragment"
     android:background="@color/backgroundLayout">
 
     <androidx.constraintlayout.widget.ConstraintLayout
