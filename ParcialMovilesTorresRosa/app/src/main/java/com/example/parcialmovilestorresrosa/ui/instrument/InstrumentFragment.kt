@@ -1,10 +1,11 @@
-package com.example.parcialmovilestorresrosa
+package com.example.parcialmovilestorresrosa.ui.instrument
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.parcialmovilestorresrosa.R
 
 
 class InstrumentFragment : Fragment() {
